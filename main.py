@@ -94,16 +94,12 @@ async def send_story():
         chat_id=CHANNEL_ID,
         text="🌳 История 1: Как Пётр I завозил липы в Петербург...\n\nПётр I лично привозил липы из Европы для озеленения новых садов Санкт-Петербурга! Это был первый крупный проект по созданию зеленых насаждений в суровых северных условиях."
     )
-            
 async def main():
     scheduler = BackgroundScheduler(timezone="Europe/Moscow")
     scheduler.add_job(send_story, trigger='cron', hour=12, minute=0)
     scheduler.start()
-    try:
-        await send_story()
-await application.bot.send_message(chat_id=CHANNEL_ID, text="✏️ Проверка: бот работает и история отправлена!")
-    except Exception as e:
-        print(f"Ошибка: {e}")
+    await application.start()
+    await application.updater.start_polling()
 
 if __name__ == "__main__":
     import asyncio
