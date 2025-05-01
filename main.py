@@ -87,15 +87,11 @@ stories = [
             # Сюда потом легко добавим все остальные истории!
         ]
 current_story_index = 0
-async def send_story(context):
-    global current_story_index
-    if current_story_index < len(stories):
-        story_text = stories[current_story_index]
-        await context.bot.send_message(chat_id=CHANNEL_ID, text=story_text)
-        current_story_index += 1
-    else:
-        await context.bot.send_message(chat_id=CHANNEL_ID, text="✅ Все истории опубликованы!")
-
+async def send_story():
+    await application.bot.send_message(
+        chat_id=CHANNEL_ID, 
+        text="🌿 Интересная история про растения Санкт-Петербурга!"
+    )
         async def main():
             scheduler = BackgroundScheduler(timezone="Europe/Moscow")
             scheduler.add_job(send_story, trigger='cron', hour=12, minute=0)
