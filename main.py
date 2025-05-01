@@ -34,7 +34,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     buy_button = [[KeyboardButton("🛒 Купить гайд за 1800 ₽")]]
     reply_markup = ReplyKeyboardMarkup(buy_button, resize_keyboard=True)
 
-await  update.message.reply_text(
+ await  update.message.reply_text(
     "Добро пожаловать в Доктор Верде!\n\nВы можете купить профессиональный гайд по гортензиям за 1800 ₽.",
                     reply_markup=reply_markup
                 )
