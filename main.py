@@ -106,7 +106,7 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
-    app.run_polling()
+    application.run_polling()
 
 
    
