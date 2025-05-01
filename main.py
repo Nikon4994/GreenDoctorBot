@@ -100,8 +100,8 @@ async def main():
     scheduler.add_job(send_story, trigger='cron', hour=12, minute=0)
     scheduler.start()
     try:
-        await send_story(app.bot)
-        await app.bot.send_message(chat_id=CHANNEL_ID, text="✏️ Проверка: бот работает и история отправлена!")
+        await send_story()
+await application.bot.send_message(chat_id=CHANNEL_ID, text="✏️ Проверка: бот работает и история отправлена!")
     except Exception as e:
         print(f"Ошибка: {e}")
 
