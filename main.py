@@ -30,8 +30,7 @@ reply_markup = ReplyKeyboardMarkup(main_menu, resize_keyboard=True)
 from telegram import KeyboardButton, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder
 
-application = ApplicationBuilder().token
-("7445098103:AAFYRydAz4fjzOWddrrM49-ncgw2rAR-n3I").build()
+application = ApplicationBuilder().token("7445098103:AAFYRydAz4fjzOWddrrM49-ncgw2rAR-n3I").build()
         # Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     buy_button = [[KeyboardButton('🛒 Купить гайд за 1800 ₽')]]
